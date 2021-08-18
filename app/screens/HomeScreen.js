@@ -6,7 +6,7 @@ import RestCard from "../components/RestCard";
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <View style={{ flex: 1, paddingTop: 12, backgroundColor: "#cc2772" }}>
+    <View style={{ flex: 1, paddingTop: 12, backgroundColor: "#fff" }}>
       <FoodSearch placeholder="search your favourite cusine and restros" />
 
       <FlatList
