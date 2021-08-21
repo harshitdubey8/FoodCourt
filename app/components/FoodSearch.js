@@ -8,7 +8,10 @@ const FoodSearch = ({ placeholder }) => {
   return (
     <View style={styles.searchBar}>
       <Ionicons name="search" size={20} color="red" />
-      <TextInput style={{ marginLeft: 5 }} placeholder={placeholder} />
+      <TextInput
+        style={{ marginLeft: 5, width: "100%" }}
+        placeholder={placeholder}
+      />
     </View>
   );
 };

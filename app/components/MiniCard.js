@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 6,
     elevation: 8,
-
     marginBottom: 15,
   },
   miniImage: {

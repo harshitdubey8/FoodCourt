@@ -4,6 +4,8 @@ import { HeaderButtons, Item } from "react-navigation-header-buttons";
 
 import FoodHeaderButton from "../components/FoodHeaderButton";
 import ExploreScreen from "../screens/ExploreScreen";
+import RestCategoryScreen from "../screens/RestCategoryScreen";
+import RestaurantScreen from "../screens/RestaurantScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +30,45 @@ const ExploreStack = () => {
           headerLeft: () => (
             <HeaderButtons HeaderButtonComponent={FoodHeaderButton}>
               <Item title="Location" iconName="location-sharp" />
+            </HeaderButtons>
+          ),
+        })}
+      />
+      <Stack.Screen
+        name="RestCategoryScreen"
+        component={RestCategoryScreen}
+        options={({ navigation }) => ({
+          headerTranslucent: true,
+          title: "",
+          headerLeft: () => (
+            <HeaderButtons HeaderButtonComponent={FoodHeaderButton}>
+              <Item
+                title="Back"
+                iconName="chevron-back"
+                onPress={() => navigation.goBack()}
+              />
+            </HeaderButtons>
+          ),
+        })}
+      />
+
+      <Stack.Screen
+        name="RestaurantScreen"
+        component={RestaurantScreen}
+        options={({ navigation }) => ({
+          title: "",
+          headerLeft: () => (
+            <HeaderButtons HeaderButtonComponent={FoodHeaderButton}>
+              <Item
+                title="Back"
+                iconName="chevron-back"
+                onPress={() => navigation.goBack()}
+              />
+            </HeaderButtons>
+          ),
+          headerRight: () => (
+            <HeaderButtons HeaderButtonComponent={FoodHeaderButton}>
+              <Item title="Save" iconName="bookmark-outline" />
             </HeaderButtons>
           ),
         })}

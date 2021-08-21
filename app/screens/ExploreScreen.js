@@ -1,12 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
+import ExploreRestCard from "../components/ExploreRestCard";
 
 import FoodSearch from "../components/FoodSearch";
 import MiniCard from "../components/MiniCard";
+import RestCard from "../components/RestCard";
 
-const ExploreScreen = () => {
+const ExploreScreen = ({ navigation }) => {
   return (
-    <View style={styles.exploreScreen}>
+    <ScrollView contentContainerStyle={styles.exploreScreen}>
       <FoodSearch placeholder="search" />
       <View style={styles.miniContainer}>
         <MiniCard />
@@ -16,8 +18,17 @@ const ExploreScreen = () => {
         <MiniCard />
         <MiniCard />
       </View>
-      <Text>This is explore screen</Text>
-    </View>
+      <View style={{ marginVertical: 15 }}>
+        <Text style={styles.title}>Curated Collections</Text>
+        <ExploreRestCard navigation={navigation} />
+      </View>
+      <View style={styles.popularContainer}>
+        <Text style={styles.title}>Popular Resturants</Text>
+        <RestCard />
+        <RestCard />
+        <RestCard />
+      </View>
+    </ScrollView>
   );
 };
 
@@ -25,13 +36,23 @@ export default ExploreScreen;
 
 const styles = StyleSheet.create({
   exploreScreen: {
-    flex: 1,
     backgroundColor: "#fff",
-    padding: 12,
+    paddingVertical: 12,
+    alignItems: "center",
   },
   miniContainer: {
+    width: "90%",
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-around",
+  },
+  popularContainer: {
+    width: "90%",
+    marginTop: 15,
+  },
+  title: {
+    fontWeight: "bold",
+    fontSize: 18,
+    marginBottom: 5,
   },
 });

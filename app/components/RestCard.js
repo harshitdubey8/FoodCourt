@@ -61,11 +61,11 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowRadius: 8,
     shadowOffset: {
-      height: 8,
+      height: 6,
       width: 0,
     },
     elevation: 8, //shadow
-    marginBottom: 10,
+    marginBottom: 20,
   },
 
   restCard: {
