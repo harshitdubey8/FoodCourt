@@ -3,12 +3,13 @@ import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 
 import FoodBottomNavigator from "./FoodBottomNavigator";
+import AuthStack from "./AuthStack";
 
 const FoodNavigator = () => {
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
-      <FoodBottomNavigator />
+      {true ? <AuthStack /> : <FoodBottomNavigator />}
     </NavigationContainer>
   );
 };

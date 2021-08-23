@@ -8,7 +8,7 @@ import {
   TouchableNativeFeedback,
 } from "react-native";
 
-const FoodButton = () => {
+const FoodButton = ({ style, backgroundColor, onButtonPress, children }) => {
   let TouchableComponent = TouchableOpacity;
 
   if (Platform.OS === "android" && Platform.Version > 21) {
@@ -16,10 +16,13 @@ const FoodButton = () => {
   }
 
   return (
-    <View style={styles.buttonContainer}>
-      <TouchableComponent style={{ flex: 1 }} onPress={() => {}}>
-        <View style={styles.buttonWrapper} useForeground>
-          <Text style={styles.buttonText}>Add</Text>
+    <View style={[styles.buttonContainer, style]}>
+      <TouchableComponent style={{ flex: 1 }} onPress={onButtonPress}>
+        <View
+          style={{ ...styles.buttonWrapper, backgroundColor }}
+          useForeground
+        >
+          {children}
         </View>
       </TouchableComponent>
     </View>
@@ -34,8 +37,14 @@ const styles = StyleSheet.create({
     width: 60,
     borderRadius: 8,
     overflow: "hidden",
-    borderWidth: 1,
-    borderColor: "red",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 6,
+    },
+    shadowOpacity: 0.24,
+    shadowRadius: 8,
+    elevation: 8,
   },
   buttonWrapper: {
     justifyContent: "center",
@@ -43,8 +52,5 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "100%",
     backgroundColor: "pink",
-  },
-  buttonText: {
-    color: "red",
   },
 });
