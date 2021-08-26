@@ -45,7 +45,7 @@ const LoginScreen = ({ navigation }) => {
               textDecorationLine: "underline",
               fontWeight: "bold",
             }}
-            onPress={() => navigation.navigate("RegisterScreen")}
+            onPress={() => navigation.navigate("Register  Screen")}
           >
             Register
           </Text>

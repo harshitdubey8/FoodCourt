@@ -12,7 +12,9 @@ const FoodCard = () => {
         </Text>
         <Text>₹ 449</Text>
         <Text style={{ color: "#888", marginBottom: 5 }}>500 Gram</Text>
-        <FoodButton />
+        <FoodButton backgroundColor="#f4104e" style={styles.button}>
+          <Text style={{ color: "#fff" }}>ADD</Text>
+        </FoodButton>
       </View>
       <View>
         <Image
@@ -36,6 +38,10 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   foodDetails: {},
+  button: {
+    width: 60,
+    height: 30,
+  },
   foodImage: {
     height: 100,
     width: 100,

@@ -17,7 +17,11 @@ const FoodButton = ({ style, backgroundColor, onButtonPress, children }) => {
 
   return (
     <View style={[styles.buttonContainer, style]}>
-      <TouchableComponent style={{ flex: 1 }} onPress={onButtonPress}>
+      <TouchableComponent
+        style={{ flex: 1 }}
+        onPress={onButtonPress}
+        useForeground
+      >
         <View
           style={{ ...styles.buttonWrapper, backgroundColor }}
           useForeground
@@ -33,8 +37,6 @@ export default FoodButton;
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    height: 30,
-    width: 60,
     borderRadius: 8,
     overflow: "hidden",
     shadowColor: "#000",

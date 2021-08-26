@@ -9,7 +9,7 @@ const FoodNavigator = () => {
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
-      {true ? <AuthStack /> : <FoodBottomNavigator />}
+      {false ? <AuthStack /> : <FoodBottomNavigator />}
     </NavigationContainer>
   );
 };
