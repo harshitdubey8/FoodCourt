@@ -6,6 +6,7 @@ import FoodHeaderButton from "../components/FoodHeaderButton";
 import HomeScreen from "../screens/HomeScreen";
 import RestaurantScreen from "../screens/RestaurantScreen";
 import CartScreen from "../screens/CartScreen";
+import CheckoutScreen from "../screens/CheckoutScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -65,6 +66,23 @@ const HomeStack = () => {
         component={CartScreen}
         options={({ navigation }) => ({
           title: "Your Cart",
+          headerLeft: () => (
+            <HeaderButtons HeaderButtonComponent={FoodHeaderButton}>
+              <Item
+                title="Back"
+                iconName="chevron-back"
+                onPress={() => navigation.goBack()}
+              />
+            </HeaderButtons>
+          ),
+        })}
+      />
+
+      <Stack.Screen
+        name="CheckoutScreen"
+        component={CheckoutScreen}
+        options={({ navigation }) => ({
+          title: "Checkout",
           headerLeft: () => (
             <HeaderButtons HeaderButtonComponent={FoodHeaderButton}>
               <Item

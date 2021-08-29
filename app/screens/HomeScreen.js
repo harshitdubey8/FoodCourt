@@ -19,6 +19,8 @@ const HomeScreen = ({ navigation }) => {
           />
         )}
       />
+
+      {/* <Text>Made By CodeArt</Text> */}
     </View>
   );
 };

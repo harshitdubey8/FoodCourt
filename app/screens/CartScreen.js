@@ -4,7 +4,7 @@ import { StyleSheet, FlatList, View, Text } from "react-native";
 import CartCard from "../components/CartCard";
 import FoodButton from "../components/FoodButton";
 
-const CartScreen = () => {
+const CartScreen = ({ navigation }) => {
   return (
     <View style={styles.cartScreen}>
       <FlatList
@@ -18,7 +18,11 @@ const CartScreen = () => {
           Amount :{" "}
           <Text style={{ fontSize: 25, fontWeight: "500" }}> $ 106 </Text>{" "}
         </Text>
-        <FoodButton backgroundColor="#f4104e" style={styles.proceedButton}>
+        <FoodButton
+          backgroundColor="#f4104e"
+          style={styles.proceedButton}
+          onButtonPress={() => navigation.navigate("CheckoutScreen")}
+        >
           <Text style={styles.buttonText}>PROCEED</Text>
         </FoodButton>
       </View>
