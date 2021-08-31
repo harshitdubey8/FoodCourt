@@ -61,7 +61,7 @@ const CheckoutScreen = () => {
           <Text style={styles.buttonText}>Place Order</Text>
         </FoodButton>
       </View>
-      <OrderPlacedModal visible={modalVisible} />
+      <OrderPlacedModal isVisible={modalVisible} goToOrders={setModalVisible} />
     </View>
   );
 };

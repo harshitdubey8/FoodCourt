@@ -1,18 +1,20 @@
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
-const MiniCard = () => {
+const MiniCard = ({ navigation }) => {
   return (
-    <View style={styles.miniCard}>
-      <Image
-        style={styles.miniImage}
-        resizeMode="cover"
-        source={{
-          uri: "https://www.kindpng.com/picc/m/176-1761587_ice-cream-cute-clipart-cute-ice-cream-png.png",
-        }}
-      />
-      <Text>Indoor</Text>
-    </View>
+    <Pressable onPress={() => navigation.navigate("RestCategoryScreen")}>
+      <View style={styles.miniCard}>
+        <Image
+          style={styles.miniImage}
+          resizeMode="cover"
+          source={{
+            uri: "https://www.kindpng.com/picc/m/176-1761587_ice-cream-cute-clipart-cute-ice-cream-png.png",
+          }}
+        />
+        <Text>Indoor</Text>
+      </View>
+    </Pressable>
   );
 };
 

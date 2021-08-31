@@ -11,12 +11,12 @@ const ExploreScreen = ({ navigation }) => {
     <ScrollView contentContainerStyle={styles.exploreScreen}>
       <FoodSearch placeholder="search" />
       <View style={styles.miniContainer}>
-        <MiniCard />
-        <MiniCard />
-        <MiniCard />
-        <MiniCard />
-        <MiniCard />
-        <MiniCard />
+        <MiniCard navigation={navigation} />
+        <MiniCard navigation={navigation} />
+        <MiniCard navigation={navigation} />
+        <MiniCard navigation={navigation} />
+        <MiniCard navigation={navigation} />
+        <MiniCard navigation={navigation} />
       </View>
       <View style={{ marginVertical: 15 }}>
         <Text style={styles.title}>Curated Collections</Text>

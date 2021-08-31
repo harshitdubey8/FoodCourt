@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeStack from "./HomeStack";
 import ExploreStack from "./ExploreStack";
 import { Ionicons } from "@expo/vector-icons";
+import OrdersScreen from "../screens/OrdersScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -19,6 +20,8 @@ const FoodBottomNavigator = () => {
             iconName = "home-outline";
           } else if (route.name === "ExploreStack") {
             iconName = "fast-food-outline";
+          } else if (route.name === "OrdersScreen") {
+            iconName = "basket-outline";
           }
           return <Ionicons color={color} size={size} name={iconName} />;
         },
@@ -35,6 +38,15 @@ const FoodBottomNavigator = () => {
         name="ExploreStack"
         component={ExploreStack}
         options={{ tabBarLabel: "Explore" }}
+      />
+      <Tab.Screen
+        name="OrdersScreen"
+        component={OrdersScreen}
+        options={{
+          headerShown: true,
+          title: "Your Orders",
+          tabBarLabel: "Orders",
+        }}
       />
     </Tab.Navigator>
   );
